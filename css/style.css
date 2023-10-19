@@ -1,0 +1,181 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#grid-container{
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+}
+
+header, main, footer{
+    padding: 1rem;
+}
+
+header{
+    font-size: 1.5rem;
+    font-weight: 600;
+    grid-area: header;
+    background-color: black;
+}
+
+header nav{
+    display:flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+header nav div{
+    display: flex;
+    gap: 1rem;
+}
+
+#logo{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar{
+    display:none;
+    color: white;
+    z-index: 1;
+}
+
+.responsive {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #242424;
+    margin: 0;
+    padding: 0;
+    top: 40px;
+    width: 100%;
+    list-style: none;
+}
+
+.responsive a {
+    color: #fff;
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+
+main{
+    grid-area: main;
+    padding: 0;
+}
+
+main section img{
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 8px; 
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#shoppa-nu{
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+#bestseller{
+    font-size: large;
+    color: black;
+}
+
+.prev, .next {
+    cursor: pointer;
+    top: 50%;
+}
+
+.prev {
+    left: 0;
+}
+
+.slider-container {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.slider-images {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+
+.slider-image {
+    flex: 0 50% 50%;
+}
+
+
+.next {
+    right: 0;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+
+@media only screen and (min-width:600px){
+
+    #grid-container{
+        grid-template-areas: "header header header" ". main ." "footer footer footer";
+    }
+
+    .navbar{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        list-style: none;
+    }
+
+    #ham, .fa-magnifying-glass{
+        display: none;
+    }
+    
+    main{
+        grid-area: main;
+        padding: 0;
+    }
+    
+    main section img{
+        width: 100%;
+    }
+    
+    .container {
+        position: relative;
+        width: 100%;
+    }
+    
+    .text-overlay {
+        position: absolute;
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 10px; 
+        text-align: center; 
+    }
+    
+}
